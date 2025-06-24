@@ -66,8 +66,11 @@ BLK="0B" CHR="0B" DIR="04" EXE="06" REG="00" HARDLINK="06" SYMLINK="06" MISSING=
 export NNN_FCOLORS="$BLK$CHR$DIR$EXE$REG$HARDLINK$SYMLINK$MISSING$ORPHAN$FIFO$SOCK$OTHER"
 export NNN_PLUG="p:preview-tui;g:!lazygit"
 export NNN_PAGER="less -r -C"
+# export NNN_PAGER="bat --paging=always"
 export NNN_OPENER="/Users/zeusoliver/.config/nnn/plugins/nuke"
-export LESSOPEN="highlight  %s"
+# export LESSOPEN="highlight  %s"
+export NNN_USE_EDITOR=1
+# export BAT_PAGER="less -r -C --mouse --wheel-lines=3"
 
 export VISUAL=hx
 export EDITOR=hx
