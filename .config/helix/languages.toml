@@ -1,5 +1,5 @@
 [[language]]
-name="rust"
+name = "rust"
 auto-format = true
 formatter = { command = "cargo fmt" }
 
@@ -8,3 +8,86 @@ check.command = "clippy"
 
 [language-server.rust-analyzer.config.cargo]
 features = "all"
+
+# Notes stuff
+# Markdown Oxide is a obisidan like lsp
+# harper is for spellcheck
+
+[[language]]
+name = "markdown"
+soft-wrap.enable = true
+text-width = 80
+soft-wrap.wrap-at-text-width = true
+language-servers = ["markdown-oxide", "harper-ls"]
+
+# WebDev shit
+
+[language-server.harper-ls]
+command = "harper-ls"
+args = ["--stdio"]
+
+[language-server.eslint]
+command = "vscode-eslint-language-server"
+args = ["--stdio"]
+
+[language-server.eslint.config]
+codeActionsOnSave = { mode = "all", "source.fixAll.eslint" = true }
+format = { enable = true }
+nodePath = ""
+quiet = false
+rulesCustomizations = []
+run = "onType"
+validate = "on"
+experimental = {}
+problems = { shortenToSingleLine = false }
+
+[language-server.eslint.config.codeAction]
+disableRuleComment = { enable = true, location = "separateLine" }
+showDocumentation = { enable = false }
+
+[[language]]
+name = "typescript"
+language-servers = ["typescript-language-server", "eslint"]
+formatter = { command = "dprint", args = ["fmt", "--stdin", "typescript"] }
+auto-format = true
+
+
+[[language]]
+name = "tsx"
+language-servers = ["typescript-language-server", "eslint", "emmet-ls"]
+formatter = { command = "dprint", args = ["fmt", "--stdin", "tsx"] }
+auto-format = true
+
+[[language]]
+name = "javascript"
+language-servers = ["typescript-language-server", "eslint"]
+formatter = { command = "dprint", args = ["fmt", "--stdin", "javascript"] }
+auto-format = true
+
+[[language]]
+name = "jsx"
+language-servers = ["typescript-language-server", "eslint"]
+formatter = { command = "dprint", args = ["fmt", "--stdin", "jsx"] }
+auto-format = true
+
+[[language]]
+name = "json"
+formatter = { command = "dprint", args = ["fmt", "--stdin", "json"] }
+auto-format = true
+
+[[language]]
+name = "toml"
+auto-format = true
+formatter = { command = "taplo", args = ["fmt", "-"] }
+
+[[language]]
+name = "html"
+language-servers = ["vscode-html-language-server"]
+formatter = { command = 'dprint', args = ["fmt", "--stdin", "html"] }
+auto-format = true
+
+[[language]]
+name = "css"
+language-servers = ["vscode-css-language-server"]
+formatter = { command = 'dprint', args = ["fmt", "--stdin", "css"] }
+auto-format = true
