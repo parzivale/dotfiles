@@ -2,26 +2,34 @@ theme = "catppuccin_macchiato"
 
 [keys.normal]
 C-g = [
-    ":write-all",
-    ":new",
-    ":insert-output lazygit",
-    ":buffer-close!",
-    ":redraw",
-    ":reload-all"
+  ":write-all",
+  ":new",
+  ":insert-output lazygit",
+  ":buffer-close!",
+  ":redraw",
+  ":reload-all",
 ]
 
 
 [editor]
 bufferline = "multiple"
+end-of-line-diagnostics = "hint"
 
 [editor.file-picker]
-hidden = false
+#hidden = false
 
 [editor.statusline]
-left = ["mode", "spinner", "register"]
-center = ["file-name"]
-right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
-separator = "│"
+left = ["mode", "spinner", "register", "separator", "selections"]
+center = ["version-control", "spacer", "separator", "file-name"]
+right = [
+  "diagnostics",
+  "workspace-diagnostics",
+  "position",
+  "file-encoding",
+  "file-line-ending",
+  "file-type",
+]
+separator = "|"
 mode.normal = "NORMAL"
 mode.insert = "INSERT"
 mode.select = "SELECT"
@@ -29,4 +37,15 @@ mode.select = "SELECT"
 [editor.lsp]
 display-inlay-hints = true
 
+[editor.whitespace.characters]
+space = "·"
+nbsp = "⍽"
+nnbsp = "␣"
+tab = "→"
+newline = "⏎"
+tabpad = "·"
 
+[editor.indent-guides]
+render = true
+character = "▏" # Some characters that work well: "▏", "┆", "┊", "⸽"
+skip-levels = 1
