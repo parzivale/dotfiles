@@ -13,13 +13,13 @@ C-g = [
 
 [editor]
 bufferline = "multiple"
-end-of-line-diagnostics = "hint"
+# end-of-line-diagnostics = "hint"
 
 [editor.file-picker]
 #hidden = false
 
 [editor.statusline]
-left = ["mode", "spinner", "register", "separator", "selections"]
+left = ["mode", "spinner", "register"]
 center = ["version-control", "spacer", "separator", "file-name"]
 right = [
   "diagnostics",

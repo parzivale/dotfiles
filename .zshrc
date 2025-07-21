@@ -30,6 +30,7 @@ function Resume {
 zle -N Resume
 bindkey "^Z" Resume
 
+
 n ()
 {
     # Block nesting of nnn in subshells
@@ -77,7 +78,6 @@ export EDITOR=hx
 
 export NNN_OPTS="Edac"
 
-alias wgsl_analyzer "wgsl-analyzer"
 
 # If I ever use alacritty or a non multiplexed terminal again uncomment
 #if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
